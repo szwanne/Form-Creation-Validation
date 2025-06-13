@@ -1,5 +1,9 @@
 //Declaring the variables for DOM Manipulation
 
+document.addEventListener("DOMContentLoaded", (events) => {
+  log.textContent += "DOMContentLoaded\n";
+});
+
 const form = document.getElementById("registration-form");
 
 form.addEventListener("submit", function (event) {
@@ -36,5 +40,9 @@ form.addEventListener("submit", function (event) {
   } else {
     passwordError.textContent = "";
   }
+
+  //Submit the form if all the conditions passes
+
+  form.submit();
 });
 //
