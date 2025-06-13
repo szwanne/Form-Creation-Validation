@@ -22,6 +22,13 @@ form.addEventListener("submit", function (event) {
     usernameError.textContent = "";
   }
 
+  const messages = [];
+
+  const isValid = true;
+  if (isValid) {
+  } else {
+  }
+
   //Validate the email
 
   const emailInput = document.getElementById("email");
