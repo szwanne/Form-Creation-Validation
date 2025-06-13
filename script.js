@@ -26,5 +26,15 @@ form.addEventListener("submit", function (event) {
   } else {
     emailError.textContent = "";
   }
+
+  //Valid the password
+
+  const passwordInput = document.getElementById("password");
+  const passwordError = document.getElementById("passwordError");
+  if (passwordInput.value.length < 6) {
+    passwordError.textContent = "Minimum characters should be 6";
+  } else {
+    passwordError.textContent = "";
+  }
 });
 //
