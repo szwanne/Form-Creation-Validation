@@ -96,11 +96,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let isValid = true;
     let messages = [];
 
-    // Clear previous error messages
+    // Clear individual error spans
     document.getElementById("errorUsername").textContent = "";
     document.getElementById("errorPassword").textContent = "";
     document.getElementById("errorEmail").textContent = "";
 
+    // Validation checks
     if (username.length < 3) {
       isValid = false;
       messages.push("Username must be at least 3 characters.");
@@ -122,14 +123,15 @@ document.addEventListener("DOMContentLoaded", function () {
         "Please enter a valid email address.";
     }
 
+    // Always make feedback visible
     feedbackDiv.style.display = "block";
 
     if (isValid) {
       feedbackDiv.textContent = "Registration successful!";
-      feedbackDiv.className = "success";
+      feedbackDiv.style.color = "#28a745";
     } else {
-      feedbackDiv.textContent = "Please fix the errors above.";
-      feedbackDiv.className = "error";
+      feedbackDiv.innerHTML = messages.join("<br>");
+      feedbackDiv.style.color = "#dc3545";
     }
   });
 });
